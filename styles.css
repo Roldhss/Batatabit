@@ -1,0 +1,554 @@
+/*
+1. Posicionamiento --> static, absolute, relative, fixed
+2. Modelo de caja (Box model) --> margin, border, padding, content
+3. Tipografía --> tipos, tamaños de fuente, etc
+4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+5. Otros --> reglas CSS y más
+*/
+:root{
+	--bitcoin-orage:#F7931A;
+	--soft-orange:#FFE9D5;
+	--secondary-blue:#FFE9D5; 
+	--soft-blue:#E7F5FF;
+	--warm-black:#201E1C;
+	--black:#282623;
+	--grey:#BABABA;
+	--off-white:#FAF8F7;
+	--just-white:#FFFFFF;
+    --green-plan:#43984a;
+    --red-plan:#A10016;
+}
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html
+{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+header
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+header img
+{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+.header__TitleContainer
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+.header__TitleContainer h1
+{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+.header__TitleContainer p
+{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+.header__TitleContainer .header__button
+{
+    position: absolute;
+    left: calc(50% - 118px);
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color:var(--black);
+}
+.header__button span
+{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/downArrow.svg');
+}
+main
+{
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+}
+.mainExchangeContainer
+{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.mainExchangeContainer__title
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.mainExchangeContainer .backgroundImg
+{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/imgs/Bitcoin.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.mainExchangeContainer__title h2
+{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+.mainExchangeContainer__title p
+{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+/*Aquí empezamos*/
+.mainTablesContainer
+{
+    display: flex;
+    gap: 10px;
+    height: 400px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.currencyTableContainer
+{
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+.currencyTableContainer__title
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orage);
+}
+.currencyTable
+{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.currencyTable table
+{
+    width: 100%;
+    height: 100%;
+}
+.currencyTable td
+{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+.currencyTableContainer .table__topLeft
+{
+    border-radius: 8px 0 0 0;
+}
+.currencyTableContainer .table__topRight
+{
+    border-radius: 0 8px 0 0;
+}
+.currencyTableContainer .table__bottomLeft
+{
+    border-radius: 0 0 0 8px;
+}
+.currencyTableContainer .table__bottomRight
+{
+    border-radius: 0 0 8px 0;
+}
+.currencyTableContainer .table__right
+{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7rem;
+    color: #757575;
+}
+.currencyTable .down
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-down.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currencyTable .up
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-up.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currencyTableContainer__date
+{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+.currencyTableContainer__date p
+{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warm-black);
+}
+.currencyTableContainer__title--comision
+{
+    color: #1A9AF7;
+}
+.currencyTableContainer__date--actualizado
+{
+    background-color: var(--soft-blue);
+}
+.currencyTableContainer--monedas
+{
+    margin-left: 40px;
+}
+.currencyTableContainer--comisiones
+{
+    margin-right: 40px;
+}
+/*Main productDetail*/
+.mainProductDetail
+{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+.mainProductDetail__potato
+{
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    top: -12px;
+    left: calc(50% - 20px);
+    background-image: url('./assets/imgs/batabit.svg');
+}
+.mainProductDetail__title
+{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+.mainProductDetail__h2
+{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+.mainProductDetail__p
+{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/* contenedor de cards productCardsContainer + cards*/
+
+.productDetailCard
+{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+.productDetailCard__icon
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/clock.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.productDetailCard__title
+{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+.productDetailCard__body
+{
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    color: #808080;
+}
+.productDetailCard__icon--tasas
+{
+    background-image: url('./assets/icons/eye.svg');
+}
+.productDetailCard__icon--monedas
+{
+    background-image: url('./assets/icons/eye.svg');
+}
+.productDetailCard__icon--confiable
+{
+    background-image: url('./assets/icons/dollar-sign.svg');
+}
+
+/*BitcoinIMG container*/
+.bitcoinImgContainer
+{
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url('./assets/imgs/bitcoinbaby2x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bitcoinImgContainer__h2
+{
+    text-align: center;
+    font-weight: 700;
+    color: var(--just-white, #FFF);
+    font-size: 2.4rem;
+    padding-top: 64px;
+    line-height: 2.6rem;
+}
+.mainPlansContainer
+{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+.plansTitle
+{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.plansTitle__H2
+{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+.plansTitle__Parrafo
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.plansContainerSlider
+{
+    display: flex;
+    gap: 10px;
+    height: 325px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.plansContainerCard
+{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 190px;
+    max-width: 260px;
+    height: 250px;
+    margin: 50px 5px 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+.plansContainerCard__p
+{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    top: -15px;
+    left: calc(50% - 60px);
+    font-size: 1.2rem;
+    background-color: var(--bitcoin-orage);
+    border-radius: 8px;
+    color: var(--just-white);
+}
+.planBody__h3
+{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500px;
+    line-height: 1.8rem;
+    color: black;
+}
+.planBody__price
+{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+    color: black;
+}
+.planBody__priceSpan
+{
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: text-top;
+}
+.planBody__saving
+{
+    font-size: 1.2rem;
+    color: #757575;
+}
+.planBody__ca
+{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #faf8f7;
+    border: 2px solid var(--bitcoin-orage);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+.planBody__caSpan
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/arrow-right.svg');
+    vertical-align: text-bottom;
+}
+.plansContainerCard--left
+{
+    margin-left: 75px;
+}
+.plansContainerCard--rigth
+{
+    margin-right: 75px;
+}
+/* footer */
+.footer
+{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orage);
+}
+.footerSection
+{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.footer__ul
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.footer__li
+{
+    margin: 10px 0;
+}
+.footer__a
+{
+    text-decoration: none;
+    color: var(--just-white);
+}
